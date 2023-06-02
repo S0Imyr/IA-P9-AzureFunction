@@ -1,0 +1,35 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get"
+      ],
+      "route": "recommendations"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "interactions",
+      "path": "data/interactions_df.csv",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "blob",
+      "direction": "in",
+      "name": "articles",
+      "path": "data/articles_min.csv",
+      "connection": "AzureWebJobsStorage"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
+
